@@ -9,7 +9,7 @@
   
   <!-- Open Graph -->
   <meta property="og:title" content="Mercy Naliaka Moraa | Software Engineer & Systems Developer">
-  <meta property="og:description" content="Software Engineer who builds for performance and grounding. Go concurrency, GraphRAG, and fintech systems.">
+  <meta property="og:description" content="Software Engineer who builds for performance and domain grounding. Go concurrency, GraphRAG, and fintech systems.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/profile.jpg">
 
@@ -40,7 +40,8 @@
       <ul class="nav-menu">
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#journey" class="nav-link">Journey</a></li>
-        <li><a href="#works" class="nav-link">Selected Works</a></li>
+        <li><a href="#works" class="nav-link">Works</a></li>
+        <li><a href="#moments" class="nav-link">Moments</a></li>
         <li><a href="#skills" class="nav-link">Skills</a></li>
         <li><a href="#writings" class="nav-link">Writing</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -65,6 +66,7 @@
       <a href="#about" class="mobile-link" onclick="closeMobileNav()">About</a>
       <a href="#journey" class="mobile-link" onclick="closeMobileNav()">Journey</a>
       <a href="#works" class="mobile-link" onclick="closeMobileNav()">Selected Works</a>
+      <a href="#moments" class="mobile-link" onclick="closeMobileNav()">Moments &amp; Field Work</a>
       <a href="#skills" class="mobile-link" onclick="closeMobileNav()">Skills</a>
       <a href="#writings" class="mobile-link" onclick="closeMobileNav()">Writing</a>
       <a href="#contact" class="mobile-link" onclick="closeMobileNav()">Contact</a>
@@ -73,7 +75,7 @@
   </header>
 
   <main>
-    <!-- Hero Section with Sunburst & Signature Layout -->
+    <!-- Hero Section with Sunburst & Signature Headline -->
     <section class="hero-section" id="hero">
       <div class="hero-sunburst-bg"></div>
 
@@ -284,7 +286,7 @@
       </div>
     </section>
 
-    <!-- Case Studies, Composed (Selected Works) -->
+    <!-- Case Studies, Composed (Selected Works with UI Previews) -->
     <section class="section-wrapper" id="works">
       <div class="container">
         <div class="section-head">
@@ -338,17 +340,9 @@
               </div>
             </div>
 
-            <div class="case-preview-card">
-              <div class="preview-pill">Architectural Impact</div>
-              <div class="preview-headline">KALRO &amp; ILRI Grounded Advisory</div>
-              <div class="preview-stat-box">
-                <div class="preview-stat-num">0%</div>
-                <div class="preview-stat-text">Hallucination rate on agricultural &amp; veterinary queries</div>
-              </div>
-              <div class="preview-stat-box">
-                <div class="preview-stat-num">2</div>
-                <div class="preview-stat-text">Native languages supported (English &amp; Swahili)</div>
-              </div>
+            <!-- Visual Mockup -->
+            <div class="case-visual-wrapper">
+              <img src="assets/digicow-preview.jpg" alt="DigiCow AI Dashboard UI Preview" loading="lazy">
             </div>
           </article>
 
@@ -388,17 +382,9 @@
               </div>
             </div>
 
-            <div class="case-preview-card">
-              <div class="preview-pill">Key Metric</div>
-              <div class="preview-headline">End-to-End Automated Ledgers</div>
-              <div class="preview-stat-box">
-                <div class="preview-stat-num">14</div>
-                <div class="preview-stat-text">REST endpoints covering inventory, reports, and payments</div>
-              </div>
-              <div class="preview-stat-box">
-                <div class="preview-stat-num">100%</div>
-                <div class="preview-stat-text">Automated mobile-money reconciliation</div>
-              </div>
+            <!-- Visual Mockup -->
+            <div class="case-visual-wrapper">
+              <img src="assets/ledgermate-preview.jpg" alt="LedgerMate Dashboard UI Preview" loading="lazy">
             </div>
           </article>
 
@@ -431,12 +417,12 @@
               </div>
             </div>
 
-            <div class="case-preview-card">
-              <div class="preview-pill">Developer Experience</div>
-              <div class="preview-headline">Local-First Practice</div>
-              <div class="preview-stat-box">
-                <div class="preview-stat-num">0ms</div>
-                <div class="preview-stat-text">Network latency for exercise validation</div>
+            <div class="case-preview-card" style="background:var(--bg-surface-warm); border:1.5px solid var(--border-peach); border-radius:var(--radius-lg); padding:32px;">
+              <div class="preview-pill" style="font-family:var(--font-mono); font-size:0.75rem; font-weight:700; color:var(--accent-brown); text-transform:uppercase; margin-bottom:8px;">Developer Experience</div>
+              <div class="preview-headline" style="font-family:var(--font-display); font-size:1.2rem; font-weight:700; color:var(--text-dark); margin-bottom:14px;">Local-First Feedback</div>
+              <div style="background:#fff; border-radius:var(--radius-sm); padding:16px; border:1px solid var(--border-peach);">
+                <div style="font-family:var(--font-display); font-size:1.8rem; font-weight:800; color:var(--accent-sienna);">0ms</div>
+                <div style="font-size:0.85rem; color:var(--text-muted);">Network latency for student exercise validation</div>
               </div>
             </div>
           </article>
@@ -474,13 +460,54 @@
               </div>
             </div>
 
-            <div class="case-preview-card">
-              <div class="preview-pill">Systems Focus</div>
-              <div class="preview-headline">Go Standard Library</div>
-              <div class="preview-stat-box">
-                <div class="preview-stat-num">100%</div>
-                <div class="preview-stat-text">Zero external runtime dependencies</div>
+            <div class="case-preview-card" style="background:var(--bg-surface-warm); border:1.5px solid var(--border-peach); border-radius:var(--radius-lg); padding:32px;">
+              <div class="preview-pill" style="font-family:var(--font-mono); font-size:0.75rem; font-weight:700; color:var(--accent-brown); text-transform:uppercase; margin-bottom:8px;">Systems Focus</div>
+              <div class="preview-headline" style="font-family:var(--font-display); font-size:1.2rem; font-weight:700; color:var(--text-dark); margin-bottom:14px;">Go Standard Library</div>
+              <div style="background:#fff; border-radius:var(--radius-sm); padding:16px; border:1px solid var(--border-peach);">
+                <div style="font-family:var(--font-display); font-size:1.8rem; font-weight:800; color:var(--accent-sienna);">100%</div>
+                <div style="font-size:0.85rem; color:var(--text-muted);">Zero external runtime dependencies</div>
               </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Moments & Community (LinkedIn Field Work & Hackathons) -->
+    <section class="section-wrapper" id="moments">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-eyebrow-tag">✦ Off The Screen</div>
+          <h2 class="section-title">Moments &amp; <span>Field Work</span></h2>
+          <p class="section-desc">Snapshots from engineering hackathons, community learning sprints at Zone01 Kisumu, and agritech deployments.</p>
+        </div>
+
+        <div class="moments-grid">
+          <!-- Moment 1 -->
+          <article class="moment-card">
+            <div class="moment-img-wrap">
+              <img src="assets/hackathon-moment.jpg" alt="Collaborative Hackathon at LakeHub Kisumu" loading="lazy">
+            </div>
+            <div class="moment-body">
+              <span class="moment-badge">LakeHub Kisumu • Systems Sprint</span>
+              <h3 class="moment-title">Engineering Hackathons &amp; Whiteboard Architecture</h3>
+              <p class="moment-desc">
+                Collaborative deep-dives mapping out distributed microservices, concurrent Go routines, and API gateways with fellow developers during sprints in Kisumu.
+              </p>
+            </div>
+          </article>
+
+          <!-- Moment 2 -->
+          <article class="moment-card">
+            <div class="moment-img-wrap">
+              <img src="assets/field-testing.jpg" alt="Field Testing DigiCow AI in Western Kenya" loading="lazy">
+            </div>
+            <div class="moment-body">
+              <span class="moment-badge">Agritech Deployment • Kenya</span>
+              <h3 class="moment-title">Validating DigiCow AI with Smallholder Farmers</h3>
+              <p class="moment-desc">
+                Testing our mobile decision support tool on-site with agricultural extension workers, ensuring Swahili &amp; English queries are intuitive and grounded.
+              </p>
             </div>
           </article>
         </div>
