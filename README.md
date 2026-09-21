@@ -18,6 +18,7 @@ Inspired by the tactile, human, and editorial design of [Siddhant Giri](https://
 * **Tactile Visuals**:
   * Retro 3D offset drop-shadow text outlines (`& SYSTEMS BUILDER`).
   * Die-cut circular portrait sticker with mouse-tracking micro-interactions and a stitched leather tag badge (`⚙️ LOW-LEVEL GO & AI SYSTEMS ⚙️`).
+  * Real-world podium proof bar: **1st Prize Winner (AI Kenya Challenge)**, **2nd Prize Winner (Neo4j Graph Track)**, **Medalist (KijaniSpace Climate-Smart Agritech)**.
   * Subtle warm conic sunburst texture in the hero backdrop.
 * **No AI Templates or Neon Clutter**: Designed from first principles to reflect human craft, clean code, and authentic engineering achievements.
 
@@ -47,6 +48,29 @@ Inspired by the tactile, human, and editorial design of [Siddhant Giri](https://
 
 ---
 
+## 🎬 Video Pitch Reel & Stage Talks
+
+Integrated media showcase linking to Mercy's keynote presentations:
+* **Interactive Media Card**: High-resolution poster featuring Mercy on the LakeHub stage with a custom pulsing coral play button.
+* **Direct Presentation Link**: [CapCut Video Presentation](https://www.capcut.com/presentation/7655601279754027029?workspaceId=7499852384714244149&utm_source=share&utm_medium=product) (`202606260926.mp4`) detailing biochar carbon credit tracking, verified payouts, and distributed system architectures.
+* **Fireside Chats & Panels**: Highlighting technical panels on GraphRAG, Go concurrency in production, and community tech mentorship.
+
+---
+
+## 📸 Moments & Field Work (Visual Gallery)
+
+Curated gallery featuring authentic photography from LinkedIn posts, hackathons, and field deployments, complete with category filters:
+1. **🏆 AI Kenya Challenge Double Podium**: 1st Prize Mercy Corps AgriFin (KES 60,000) & 2nd Prize Neo4j Track checks.
+2. **🏅 KijaniSpace Copernicus Climate Hackathon**: Earth Observation agritech medals and awards.
+3. **💻 Deep Focus Systems Sprints**: Concurrent Go pipelines, memory allocation, and worker pools at Zone01 Kisumu.
+4. **🌱 LakeHub Demo Day**: Pitching Durable Biochar Carbon Removal for SMEs & smallholders.
+5. **🎤 Zone01 Systems Architecture Defense**: Presenting distributed services and database indexing strategies.
+6. **👥 Collaborative Pair Programming**: Whiteboard reviews and active peer code evaluations.
+7. **🎙️ Fireside Tech Interview**: Discussions on AI engineering, systems reliability, and open-source leadership.
+8. **🌾 Western Kenya Field Deployments**: Validating mobile decision support directly with farmers and extension officers.
+
+---
+
 ## 📁 Repository Structure
 
 ```text
@@ -54,10 +78,21 @@ Mercy_Moraa_Portfolio/
 ├── assets/
 │   ├── profile.jpg                     # High-res professional portrait (Canon EOS R100)
 │   ├── avatar.jpg                      # LinkedIn profile avatar
+│   ├── digicow-preview.jpg             # DigiCow AI GraphRAG dashboard mockup
+│   ├── ledgermate-preview.jpg          # LedgerMate FinTech SaaS dashboard mockup
+│   ├── lakehub-keynote.jpg             # LakeHub keynote presentation photo (Video Reel poster)
+│   ├── fireside-interview.jpg          # Fireside tech interview & panel discussion
+│   ├── ai-kenya-win.png                # AI Kenya Challenge 1st & 2nd prize award ceremony
+│   ├── kijanispace-awards.jpg          # KijaniSpace Copernicus Climate Hackathon medalists
+│   ├── zone01-coding.jpg               # Deep focus systems coding sprint at Zone01 Kisumu
+│   ├── zone01-pitch.jpg                # Systems architecture & code defense at Zone01
+│   ├── zone01-collaboration.jpg        # Pair programming & collaborative peer review
+│   ├── lakehub-biochar-team.jpg        # LakeHub demo day biochar team pitch
+│   ├── field-testing.jpg               # Western Kenya smallholder field testing
 │   └── Mercy_Naliaka_Moraa_Resume.pdf   # Complete downloadable resume
 ├── index.html                          # Semantic, accessible HTML5 structure & content
 ├── style.css                           # Warm editorial design system, typography & layout
-├── script.js                           # Interactive filtering, copy utilities & sticker tilt
+├── script.js                           # Interactive filtering, video launcher & sticker physics
 └── README.md                           # Documentation
 ```
 
