@@ -28,7 +28,40 @@ function filterCaseStudies(category, event) {
         card.style.display = 'none';
       }, 200);
     }
+// Moments & Field Work Gallery Filtering
+function filterMoments(category, event) {
+  const cards = document.querySelectorAll('.moment-card');
+  const chips = document.querySelectorAll('.moment-filter-chip');
+
+  chips.forEach(chip => chip.classList.remove('active'));
+  if (event && event.target) {
+    event.target.classList.add('active');
+  }
+
+  cards.forEach(card => {
+    const itemCat = card.getAttribute('data-category') || '';
+    if (category === 'all' || itemCat.includes(category)) {
+      card.style.display = 'flex';
+      setTimeout(() => {
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      }, 30);
+    } else {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(12px)';
+      setTimeout(() => {
+        card.style.display = 'none';
+      }, 200);
+    }
   });
+}
+
+// Open CapCut Video Reel Presentation
+function openCapCutVideo(event) {
+  if (event) event.preventDefault();
+  const capcutUrl = 'https://www.capcut.com/presentation/7655601279754027029?workspaceId=7499852384714244149&utm_source=share&utm_medium=product';
+  showToast('Launching video presentation on CapCut...');
+  window.open(capcutUrl, '_blank', 'noopener,noreferrer');
 }
 
 // Copy to Clipboard Utility with Toast Notification

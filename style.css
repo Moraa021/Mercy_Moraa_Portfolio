@@ -521,6 +521,43 @@ body {
 }
 
 /* ==========================================================================
+   Hero Awards & Podium Proof Bar
+   ========================================================================== */
+.hero-awards-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 24px auto 0;
+  max-width: 960px;
+}
+
+.award-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-peach);
+  border-radius: var(--radius-pill);
+  padding: 8px 18px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  box-shadow: 2px 2px 0 var(--border-peach);
+  transition: var(--transition-smooth);
+}
+
+.award-pill:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-sienna);
+  box-shadow: 2px 4px 0 var(--border-peach);
+}
+
+.award-pill .icon {
+  font-size: 1.05rem;
+}
+
+/* ==========================================================================
    Metrics Section (Spacious Cards)
    ========================================================================== */
 .metrics-section {
@@ -1013,8 +1050,300 @@ body {
 }
 
 /* ==========================================================================
-   Moments & Community (Visual Photos from LinkedIn)
+   Video Reel & Keynotes Section (CapCut Presentation Integration)
    ========================================================================== */
+.video-reel-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 36px;
+  align-items: stretch;
+}
+
+@media (max-width: 960px) {
+  .video-reel-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.video-player-card {
+  position: relative;
+  background: var(--text-dark);
+  border: 2px solid var(--text-dark);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-retro);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 460px;
+  transition: var(--transition-smooth);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.video-player-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-retro-hover);
+}
+
+.video-poster-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.72;
+  transition: transform 0.6s ease, opacity 0.4s ease;
+}
+
+.video-player-card:hover .video-poster-bg {
+  transform: scale(1.05);
+  opacity: 0.85;
+}
+
+.video-overlay-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 14, 13, 0.25) 0%, rgba(15, 14, 13, 0.82) 65%, rgba(15, 14, 13, 0.97) 100%);
+  pointer-events: none;
+}
+
+.video-center-action {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.play-pulse-circle {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: var(--accent-sienna);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 0 0 0 rgba(194, 94, 46, 0.7);
+  animation: pulse-ring 2.2s infinite cubic-bezier(0.66, 0, 0, 1);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.video-player-card:hover .play-pulse-circle {
+  transform: scale(1.12);
+  background: #E06C36;
+}
+
+@keyframes pulse-ring {
+  to {
+    box-shadow: 0 0 0 24px rgba(194, 94, 46, 0);
+  }
+}
+
+.play-pulse-circle svg {
+  margin-left: 4px;
+}
+
+.video-content-pane {
+  position: relative;
+  z-index: 2;
+  padding: 34px 36px;
+  color: #fff;
+}
+
+.video-tag-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.video-chip {
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #FFF8F2;
+  letter-spacing: 0.5px;
+}
+
+.video-chip.live {
+  background: var(--accent-sienna);
+  border-color: #E06C36;
+}
+
+.video-card-title {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #FFF8F2;
+  margin-bottom: 10px;
+}
+
+.video-card-desc {
+  font-size: 0.94rem;
+  color: rgba(255, 248, 242, 0.88);
+  line-height: 1.55;
+  margin-bottom: 20px;
+}
+
+.video-action-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.video-meta-file {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: rgba(255, 248, 242, 0.75);
+}
+
+.btn-watch-capcut {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #FFF8F2;
+  color: var(--text-dark);
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.btn-watch-capcut:hover {
+  background: var(--border-peach);
+  transform: translateY(-2px);
+}
+
+/* Companion Card (Fireside & Talks) */
+.video-companion-card {
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-peach);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-smooth);
+}
+
+.video-companion-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-dark);
+}
+
+.companion-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 230px;
+  overflow: hidden;
+  background: var(--bg-peach);
+}
+
+.companion-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.video-companion-card:hover .companion-img-wrap img {
+  transform: scale(1.04);
+}
+
+.companion-body {
+  padding: 30px 32px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.companion-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent-brown);
+  background: var(--bg-surface-warm);
+  border: 1px solid var(--border-peach);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  align-self: flex-start;
+  margin-bottom: 12px;
+}
+
+.companion-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.companion-text {
+  font-size: 0.94rem;
+  color: var(--text-body);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.speaking-topics-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.speaking-topics-list li {
+  font-size: 0.88rem;
+  color: var(--text-dark);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.45;
+}
+
+.speaking-topics-list li::before {
+  content: '▸';
+  color: var(--accent-sienna);
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* ==========================================================================
+   Moments & Community (Visual Photos from LinkedIn & Field Work)
+   ========================================================================== */
+.moments-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 36px;
+}
+
 .moments-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -1027,7 +1356,7 @@ body {
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
-  transition: var(--transition-smooth);
+  transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   display: flex;
   flex-direction: column;
 }
@@ -1078,18 +1407,41 @@ body {
   align-self: flex-start;
 }
 
+.moment-badge.award {
+  background: #FFF0E0;
+  border-color: #FFC085;
+  color: #A84818;
+}
+
 .moment-title {
   font-family: var(--font-display);
-  font-size: 1.28rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--text-dark);
   line-height: 1.35;
 }
 
 .moment-desc {
-  font-size: 0.94rem;
+  font-size: 0.92rem;
   color: var(--text-body);
   line-height: 1.6;
+}
+
+.moment-footer-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.moment-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  background: var(--bg-surface-warm);
+  border: 1px solid var(--border-peach);
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
 }
 
 /* ==========================================================================

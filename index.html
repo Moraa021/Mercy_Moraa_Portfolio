@@ -41,6 +41,7 @@
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#journey" class="nav-link">Journey</a></li>
         <li><a href="#works" class="nav-link">Works</a></li>
+        <li><a href="#reel" class="nav-link">Reel</a></li>
         <li><a href="#moments" class="nav-link">Moments</a></li>
         <li><a href="#skills" class="nav-link">Skills</a></li>
         <li><a href="#writings" class="nav-link">Writing</a></li>
@@ -66,6 +67,7 @@
       <a href="#about" class="mobile-link" onclick="closeMobileNav()">About</a>
       <a href="#journey" class="mobile-link" onclick="closeMobileNav()">Journey</a>
       <a href="#works" class="mobile-link" onclick="closeMobileNav()">Selected Works</a>
+      <a href="#reel" class="mobile-link" onclick="closeMobileNav()">Pitch Reel</a>
       <a href="#moments" class="mobile-link" onclick="closeMobileNav()">Moments &amp; Field Work</a>
       <a href="#skills" class="mobile-link" onclick="closeMobileNav()">Skills</a>
       <a href="#writings" class="mobile-link" onclick="closeMobileNav()">Writing</a>
@@ -117,6 +119,9 @@
             Explore Selected Works
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
           </a>
+          <a href="#reel" class="btn-secondary">
+            Watch Pitch Reel 🎬
+          </a>
           <a href="assets/Mercy_Naliaka_Moraa_Resume.pdf" target="_blank" class="btn-secondary">
             View Resume 📄
           </a>
@@ -143,6 +148,22 @@
             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
           </a>
         </div>
+
+        <!-- Real-World Podium Proof Pills -->
+        <div class="hero-awards-pills">
+          <div class="award-pill">
+            <span class="icon">🏆</span>
+            <span>1st Prize Winner • AI Kenya Challenge (Mercy Corps AgriFin)</span>
+          </div>
+          <div class="award-pill">
+            <span class="icon">🥈</span>
+            <span>2nd Prize Winner • Neo4j Graph Track (AngaWatch)</span>
+          </div>
+          <div class="award-pill">
+            <span class="icon">🏅</span>
+            <span>Medalist • KijaniSpace Climate-Smart Agritech</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -159,8 +180,8 @@
             <div class="metric-label">Public Repositories &amp; Modules</div>
           </div>
           <div class="metric-box">
-            <div class="metric-num">100%</div>
-            <div class="metric-label">Zero-Hallucination GraphRAG Grounding</div>
+            <div class="metric-num">3</div>
+            <div class="metric-label">Podiums &amp; Hackathon Awards</div>
           </div>
           <div class="metric-box">
             <div class="metric-num">14+</div>
@@ -473,41 +494,261 @@
       </div>
     </section>
 
-    <!-- Moments & Community (LinkedIn Field Work & Hackathons) -->
+    <!-- Video Spotlight: Pitch Reel & Keynotes (CapCut Presentation) -->
+    <section class="section-wrapper" id="reel">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-eyebrow-tag">✦ Pitch Reel &amp; Stage Talks</div>
+          <h2 class="section-title">In Action: <span>Systems Pitch Reel</span></h2>
+          <p class="section-desc">Watch me present system architectures, pitch climate-smart agritech solutions, and engage in engineering discussions.</p>
+        </div>
+
+        <div class="video-reel-grid">
+          <!-- Featured Interactive Video Card -->
+          <div class="video-player-card" onclick="openCapCutVideo(event)" title="Click to watch full presentation video on CapCut">
+            <img src="assets/lakehub-keynote.jpg" alt="Mercy Moraa Keynote Presentation on LakeHub Stage" class="video-poster-bg">
+            <div class="video-overlay-scrim"></div>
+
+            <!-- Pulsing Play Button -->
+            <div class="video-center-action">
+              <div class="play-pulse-circle" aria-label="Play Pitch Reel">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+            </div>
+
+            <!-- Content Pane -->
+            <div class="video-content-pane">
+              <div class="video-tag-bar">
+                <span class="video-chip live">CapCut Presentation 🎬</span>
+                <span class="video-chip">LakeHub Stage</span>
+                <span class="video-chip">Biochar Carbon Removal</span>
+                <span class="video-chip">AI &amp; Systems</span>
+              </div>
+
+              <h3 class="video-card-title">Keynote Presentation: Biochar Carbon Removal &amp; Agritech Systems</h3>
+              <p class="video-card-desc">
+                Delivering an end-to-end technical pitch to industry judges at LakeHub Kisumu, breaking down carbon-credit tracking, verified farmer payouts, and distributed system architectures.
+              </p>
+
+              <div class="video-action-bar">
+                <div class="video-meta-file">
+                  <span>📹 202606260926.mp4</span> • <span>Interactive Media Presentation</span>
+                </div>
+                <a href="https://www.capcut.com/presentation/7655601279754027029?workspaceId=7499852384714244149&utm_source=share&utm_medium=product" target="_blank" rel="noopener noreferrer" class="btn-watch-capcut" onclick="event.stopPropagation();">
+                  Watch on CapCut ↗
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Companion Card: Fireside Panel & Leadership -->
+          <div class="video-companion-card">
+            <div class="companion-img-wrap">
+              <img src="assets/fireside-interview.jpg" alt="Mercy Moraa in Fireside Tech Interview" loading="lazy">
+            </div>
+            <div class="companion-body">
+              <div>
+                <span class="companion-eyebrow">Tech Panels &amp; Forums</span>
+                <h3 class="companion-title">Fireside Chats &amp; Engineering Panels</h3>
+                <p class="companion-text">
+                  Speaking on panels and fireside conversations covering the intersection of low-level backend engineering, trustworthy AI, and community tech development in East Africa.
+                </p>
+                <ul class="speaking-topics-list">
+                  <li><strong>Zero-Hallucination GraphRAG:</strong> Grounding generative LLMs with Cypher &amp; Neo4j knowledge graphs.</li>
+                  <li><strong>Go Concurrency in Production:</strong> Designing thread-safe pipelines with goroutines and worker pools.</li>
+                  <li><strong>Women in Systems Engineering:</strong> Inspiring the next generation of builders across LakeHub &amp; Zone01.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Moments & Field Work (Visual Photos from Hackathons, Zone01 & Deployments) -->
     <section class="section-wrapper" id="moments">
       <div class="container">
         <div class="section-head">
-          <div class="section-eyebrow-tag">✦ Off The Screen</div>
-          <h2 class="section-title">Moments &amp; <span>Field Work</span></h2>
-          <p class="section-desc">Snapshots from engineering hackathons, community learning sprints at Zone01 Kisumu, and agritech deployments.</p>
+          <div class="section-eyebrow-tag">✦ Moments &amp; Field Work</div>
+          <h2 class="section-title">Off the Screen &amp; <span>In the Arena</span></h2>
+          <p class="section-desc">Authentic snapshots from engineering hackathons, double podium finishes, deep-focus coding sprints, and hands-on farmer field tests.</p>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="moments-filter-row">
+          <button class="filter-chip moment-filter-chip active" onclick="filterMoments('all', event)">All Moments</button>
+          <button class="filter-chip moment-filter-chip" onclick="filterMoments('awards', event)">🏆 Hackathons &amp; Awards</button>
+          <button class="filter-chip moment-filter-chip" onclick="filterMoments('talks', event)">🎤 Stage Talks &amp; Pitches</button>
+          <button class="filter-chip moment-filter-chip" onclick="filterMoments('sprints', event)">💻 Systems Coding Sprints</button>
+          <button class="filter-chip moment-filter-chip" onclick="filterMoments('field', event)">🌱 Field Deployments</button>
         </div>
 
         <div class="moments-grid">
-          <!-- Moment 1 -->
-          <article class="moment-card">
+          <!-- Card 1: AI Kenya Awards Double Win -->
+          <article class="moment-card" data-category="awards">
             <div class="moment-img-wrap">
-              <img src="assets/hackathon-moment.jpg" alt="Collaborative Hackathon at LakeHub Kisumu" loading="lazy">
+              <img src="assets/ai-kenya-win.png" alt="AI Kenya AI Challenge Prize Winners with Mercy Corps AgriFin and Neo4j Checks" loading="lazy">
             </div>
             <div class="moment-body">
-              <span class="moment-badge">LakeHub Kisumu • Systems Sprint</span>
-              <h3 class="moment-title">Engineering Hackathons &amp; Whiteboard Architecture</h3>
-              <p class="moment-desc">
-                Collaborative deep-dives mapping out distributed microservices, concurrent Go routines, and API gateways with fellow developers during sprints in Kisumu.
-              </p>
+              <div>
+                <span class="moment-badge award">🏆 1st &amp; 2nd Prize Winner • AI Kenya Challenge</span>
+                <h3 class="moment-title">Double Podium at AI Kenya AI Challenge</h3>
+                <p class="moment-desc">
+                  Awarded 1st Prize Winner (KES 60,000) in the Mercy Corps AgriFin track for our farmer intelligence platform, and 2nd Prize Winner (KES 30,000) in the Neo4j Knowledge Graph track for AngaWatch.
+                </p>
+              </div>
+              <div class="moment-footer-tags">
+                <span class="moment-tag">Nairobi, Kenya</span>
+                <span class="moment-tag">Neo4j</span>
+                <span class="moment-tag">Mercy Corps AgriFin</span>
+              </div>
             </div>
           </article>
 
-          <!-- Moment 2 -->
-          <article class="moment-card">
+          <!-- Card 2: KijaniSpace Medals -->
+          <article class="moment-card" data-category="awards field">
             <div class="moment-img-wrap">
-              <img src="assets/field-testing.jpg" alt="Field Testing DigiCow AI in Western Kenya" loading="lazy">
+              <img src="assets/kijanispace-awards.jpg" alt="KijaniSpace Copernicus Climate Smart Agriculture Hackathon Medals" loading="lazy">
             </div>
             <div class="moment-body">
-              <span class="moment-badge">Agritech Deployment • Kenya</span>
-              <h3 class="moment-title">Validating DigiCow AI with Smallholder Farmers</h3>
-              <p class="moment-desc">
-                Testing our mobile decision support tool on-site with agricultural extension workers, ensuring Swahili &amp; English queries are intuitive and grounded.
-              </p>
+              <div>
+                <span class="moment-badge award">🏅 Medalist • Climate-Smart Agritech</span>
+                <h3 class="moment-title">KijaniSpace Copernicus Hackathon Medalists</h3>
+                <p class="moment-desc">
+                  Honored with medals for engineering Copernicus Earth Observation (EO) satellite pipelines to deliver actionable soil moisture and localized climate advisories to smallholder farmers.
+                </p>
+              </div>
+              <div class="moment-footer-tags">
+                <span class="moment-tag">Copernicus EO</span>
+                <span class="moment-tag">Climate Tech</span>
+                <span class="moment-tag">Kisumu</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: Deep Focus Coding at Zone01 -->
+          <article class="moment-card" data-category="sprints">
+            <div class="moment-img-wrap">
+              <img src="assets/zone01-coding.jpg" alt="Mercy Moraa Coding Sprint at Zone01 Kisumu" loading="lazy">
+            </div>
+            <div class="moment-body">
+              <div>
+                <span class="moment-badge">Zone01 Kisumu • Systems Sprint</span>
+                <h3 class="moment-title">Deep Focus Systems &amp; Concurrency Sprints</h3>
+                <p class="moment-desc">
+                  Building memory-safe concurrent Go pipelines, ASCII graphics engines, and microservices during intense hands-on development sprints at Zone01 Kisumu.
+                </p>
+              </div>
+              <div class="moment-footer-tags">
+                <span class="moment-tag">Go (Golang)</span>
+                <span class="moment-tag">Worker Pools</span>
+                <span class="moment-tag">Peer Learning</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: LakeHub Biochar Team Pitch -->
+          <article class="moment-card" data-category="talks field">
+            <div class="moment-img-wrap">
+              <img src="assets/lakehub-biochar-team.jpg" alt="LakeHub Demo Day Team Presentation on Durable Biochar Carbon Removal" loading="lazy">
+            </div>
+            <div class="moment-body">
+              <div>
+                <span class="moment-badge">LakeHub Kisumu • Demo Day</span>
+                <h3 class="moment-title">Durable Biochar Carbon Removal Team Pitch</h3>
+                <p class="moment-desc">
+                  Standing alongside my co-builders presenting our SME &amp; smallholder carbon credit verification platform to venture mentors, tech leaders, and community partners at LakeHub.
+                </p>
+              </div>
+              <div class="moment-footer-tags">
+                <span class="moment-tag">LakeHub</span>
+                <span class="moment-tag">Carbon Removal</span>
+                <span class="moment-tag">SME Tech</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5: Stage Architecture Talk at Zone01 -->
+          <article class="moment-card" data-category="talks">
+            <div class="moment-img-wrap">
+              <img src="assets/zone01-pitch.jpg" alt="Mercy Moraa Presenting System Architecture at Zone01 Kisumu" loading="lazy">
+            </div>
+            <div class="moment-body">
+              <div>
+                <span class="moment-badge">Technical Talk • Architecture</span>
+                <h3 class="moment-title">Systems Architecture &amp; Code Defense</h3>
+                <p class="moment-desc">
+                  Presenting distributed worker flows, data structure design decisions, and database indexing strategies during rigorous Zone01 sprint evaluations.
+                </p>
+              </div>
+              <div class="moment-footer-tags">
+                <span class="moment-tag">Architecture</span>
+                <span class="moment-tag">Tech Talk</span>
+                <span class="moment-tag">Zone01</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6: Collaborative Pair Programming -->
+          <article class="moment-card" data-category="sprints">
+            <div class="moment-img-wrap">
+              <img src="assets/zone01-collaboration.jpg" alt="Collaborative Pair Programming and Peer Code Review" loading="lazy">
+            </div>
+            <div class="moment-body">
+              <div>
+                <span class="moment-badge">01 Edu • Peer Review</span>
+                <h3 class="moment-title">Collaborative Code Reviews &amp; Pair Programming</h3>
+                <p class="moment-desc">
+                  Practicing active peer evaluation, breaking down complex algorithmic edge cases, and pair programming to enforce clean, maintainable, and bug-free codebases.
+                </p>
+              </div>
+              <div class="moment-footer-tags">
+                <span class="moment-tag">Pair Programming</span>
+                <span class="moment-tag">Code Review</span>
+                <span class="moment-tag">01 Edu</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 7: Fireside Tech Interview -->
+          <article class="moment-card" data-category="talks">
+            <div class="moment-img-wrap">
+              <img src="assets/fireside-interview.jpg" alt="Mercy Moraa in Tech Interview and Leadership Panel" loading="lazy">
+            </div>
+            <div class="moment-body">
+              <div>
+                <span class="moment-badge">Tech Leadership • Interview</span>
+                <h3 class="moment-title">Fireside Chat on AI Engineering &amp; Careers</h3>
+                <p class="moment-desc">
+                  Reflecting on practical machine learning grounding, open-source development, and building resilient software systems that solve real-world problems in Kenyan communities.
+                </p>
+              </div>
+              <div class="moment-footer-tags">
+                <span class="moment-tag">Community</span>
+                <span class="moment-tag">AI Insights</span>
+                <span class="moment-tag">Mentorship</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 8: Western Kenya Field Deployments -->
+          <article class="moment-card" data-category="field">
+            <div class="moment-img-wrap">
+              <img src="assets/field-testing.jpg" alt="Testing DigiCow AI with Smallholder Farmers in Western Kenya" loading="lazy">
+            </div>
+            <div class="moment-body">
+              <div>
+                <span class="moment-badge">Agritech Deployment • Kenya</span>
+                <h3 class="moment-title">Validating DigiCow AI with Smallholder Farmers</h3>
+                <p class="moment-desc">
+                  Testing our mobile decision support system directly in the field with agricultural extension officers, verifying that Swahili &amp; English queries deliver immediate, practical value.
+                </p>
+              </div>
+              <div class="moment-footer-tags">
+                <span class="moment-tag">Field Research</span>
+                <span class="moment-tag">Swahili AI</span>
+                <span class="moment-tag">Western Kenya</span>
+              </div>
             </div>
           </article>
         </div>
