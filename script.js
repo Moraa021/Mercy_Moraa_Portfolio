@@ -5,64 +5,97 @@
 
 // Case Studies Filtering
 function filterCaseStudies(category, event) {
+  const btn = event ? (event.currentTarget || (event.target ? event.target.closest('button') : null)) : null;
+  const chips = document.querySelectorAll('.project-filter-row .filter-chip');
+
+  chips.forEach(chip => chip.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+
   const cards = document.querySelectorAll('.case-study-card');
-  const chips = document.querySelectorAll('.filter-chip');
-
-  chips.forEach(chip => chip.classList.remove('active'));
-  if (event && event.target) {
-    event.target.classList.add('active');
-  }
-
   cards.forEach(card => {
-    const itemCat = card.getAttribute('data-category');
-    if (category === 'all' || itemCat === category) {
-      card.style.display = 'grid';
-      setTimeout(() => {
-        card.style.opacity = '1';
-        card.style.transform = 'translateY(0)';
-      }, 30);
+    const itemCat = (card.getAttribute('data-category') || '').toLowerCase();
+    if (category === 'all' || itemCat === category.toLowerCase()) {
+      card.classList.remove('is-hidden');
     } else {
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(12px)';
-      setTimeout(() => {
-        card.style.display = 'none';
-      }, 200);
-    }
-// Moments & Field Work Gallery Filtering
-function filterMoments(category, event) {
-  const cards = document.querySelectorAll('.moment-card');
-  const chips = document.querySelectorAll('.moment-filter-chip');
-
-  chips.forEach(chip => chip.classList.remove('active'));
-  if (event && event.target) {
-    event.target.classList.add('active');
-  }
-
-  cards.forEach(card => {
-    const itemCat = card.getAttribute('data-category') || '';
-    if (category === 'all' || itemCat.includes(category)) {
-      card.style.display = 'flex';
-      setTimeout(() => {
-        card.style.opacity = '1';
-        card.style.transform = 'translateY(0)';
-      }, 30);
-    } else {
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(12px)';
-      setTimeout(() => {
-        card.style.display = 'none';
-      }, 200);
+      card.classList.add('is-hidden');
     }
   });
 }
 
-// Open CapCut Video Reel Presentation
-function openCapCutVideo(event) {
-  if (event) event.preventDefault();
-  const capcutUrl = 'https://www.capcut.com/presentation/7655601279754027029?workspaceId=7499852384714244149&utm_source=share&utm_medium=product';
-  showToast('Launching video presentation on CapCut...');
-  window.open(capcutUrl, '_blank', 'noopener,noreferrer');
+// Moments & Field Work Gallery Filtering
+function filterMoments(category, event) {
+  const btn = event ? (event.currentTarget || (event.target ? event.target.closest('button') : null)) : null;
+  const chips = document.querySelectorAll('.moment-filter-chip');
+
+  chips.forEach(chip => chip.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+
+  const cards = document.querySelectorAll('.moment-card');
+  cards.forEach(card => {
+    const itemCats = (card.getAttribute('data-category') || '').toLowerCase().split(/\s+/);
+    if (category === 'all' || itemCats.includes(category.toLowerCase())) {
+      card.classList.remove('is-hidden');
+    } else {
+      card.classList.add('is-hidden');
+    }
+  });
 }
+
+// In-UI Presentation Reel Player & Deck Modal Handler
+function playPresentationReel(event) {
+  if (event) event.preventDefault();
+  const screenWrap = document.getElementById('presentationScreen');
+  const videoElem = document.getElementById('embeddedReelVideo');
+  const posterImg = document.getElementById('reelPosterImg');
+
+  // Check if video element has loaded a valid video file
+  if (videoElem && videoElem.canPlayType && videoElem.currentSrc && videoElem.readyState >= 2) {
+    if (videoElem.paused) {
+      videoElem.style.display = 'block';
+      if (posterImg) posterImg.style.display = 'none';
+      videoElem.play().then(() => {
+        showToast('Playing presentation reel...');
+      }).catch(() => {
+        if (posterImg) posterImg.style.display = 'block';
+        videoElem.style.display = 'none';
+        openPresentationModal();
+      });
+      return;
+    } else {
+      videoElem.pause();
+      return;
+    }
+  }
+
+  // Gracefully open the full interactive slide deck modal
+  openPresentationModal();
+}
+
+function openPresentationModal() {
+  const modal = document.getElementById('presentationModal');
+  if (modal) {
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+    showToast('Viewing DigiCow AI presentation slides & pitch deck...');
+  }
+}
+
+function closePresentationModal(event) {
+  if (event) event.preventDefault();
+  const modal = document.getElementById('presentationModal');
+  if (modal) {
+    modal.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+}
+
+// Close presentation modal on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closePresentationModal();
+  }
+});
+
 
 // Copy to Clipboard Utility with Toast Notification
 function copyContact(text, message) {
