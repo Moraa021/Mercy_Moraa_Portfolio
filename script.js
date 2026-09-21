@@ -1,125 +1,14 @@
-// Particle Network Background
-(function initCanvas() {
-  const canvas = document.getElementById('particles-canvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  let particles = [];
-  let w, h;
+// ==========================================================================
+// Mercy Naliaka Moraa — Portfolio Interactive Script
+// Warm, lightweight, fast, no external libraries needed.
+// ==========================================================================
 
-  function resize() {
-    w = canvas.width = window.innerWidth;
-    h = canvas.height = window.innerHeight;
-  }
+// Case Studies Filtering
+function filterCaseStudies(category, event) {
+  const cards = document.querySelectorAll('.case-study-card');
+  const chips = document.querySelectorAll('.filter-chip');
 
-  window.addEventListener('resize', resize);
-  resize();
-
-  class Particle {
-    constructor() {
-      this.x = Math.random() * w;
-      this.y = Math.random() * h;
-      this.vx = (Math.random() - 0.5) * 0.5;
-      this.vy = (Math.random() - 0.5) * 0.5;
-      this.radius = Math.random() * 1.5 + 0.6;
-      this.alpha = Math.random() * 0.4 + 0.15;
-    }
-
-    update() {
-      this.x += this.vx;
-      this.y += this.vy;
-
-      if (this.x < 0) this.x = w;
-      if (this.x > w) this.x = 0;
-      if (this.y < 0) this.y = h;
-      if (this.y > h) this.y = 0;
-    }
-
-    draw() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(0, 242, 254, ${this.alpha})`;
-      ctx.fill();
-    }
-  }
-
-  const count = Math.min(Math.floor(window.innerWidth / 22), 65);
-  for (let i = 0; i < count; i++) {
-    particles.push(new Particle());
-  }
-
-  function animate() {
-    ctx.clearRect(0, 0, w, h);
-
-    for (let i = 0; i < particles.length; i++) {
-      particles[i].update();
-      particles[i].draw();
-
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-
-        if (dist < 110) {
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(0, 242, 254, ${0.12 * (1 - dist / 110)})`;
-          ctx.stroke();
-        }
-      }
-    }
-    requestAnimationFrame(animate);
-  }
-  animate();
-})();
-
-// Typewriter Effect
-(function typeWriter() {
-  const el = document.getElementById('typed-text');
-  if (!el) return;
-
-  const phrases = [
-    "Software Engineer (Go & Python)",
-    "Applied AI & GraphRAG Specialist",
-    "Fintech & Backend Architect",
-    "Systems Engineering Apprentice @ Zone01"
-  ];
-  let pIdx = 0;
-  let cIdx = 0;
-  let isDeleting = false;
-
-  function type() {
-    const current = phrases[pIdx];
-    if (isDeleting) {
-      el.textContent = current.substring(0, cIdx - 1);
-      cIdx--;
-    } else {
-      el.textContent = current.substring(0, cIdx + 1);
-      cIdx++;
-    }
-
-    let speed = isDeleting ? 35 : 75;
-
-    if (!isDeleting && cIdx === current.length) {
-      speed = 2200;
-      isDeleting = true;
-    } else if (isDeleting && cIdx === 0) {
-      isDeleting = false;
-      pIdx = (pIdx + 1) % phrases.length;
-      speed = 450;
-    }
-
-    setTimeout(type, speed);
-  }
-  type();
-})();
-
-// Project Category Filtering
-function filterProjects(category, event) {
-  const cards = document.querySelectorAll('.project-card');
-  const buttons = document.querySelectorAll('.filter-btn');
-
-  buttons.forEach(btn => btn.classList.remove('active'));
+  chips.forEach(chip => chip.classList.remove('active'));
   if (event && event.target) {
     event.target.classList.add('active');
   }
@@ -127,35 +16,35 @@ function filterProjects(category, event) {
   cards.forEach(card => {
     const itemCat = card.getAttribute('data-category');
     if (category === 'all' || itemCat === category) {
-      card.style.display = 'flex';
+      card.style.display = 'grid';
       setTimeout(() => {
         card.style.opacity = '1';
         card.style.transform = 'translateY(0)';
-      }, 50);
+      }, 30);
     } else {
       card.style.opacity = '0';
-      card.style.transform = 'translateY(15px)';
+      card.style.transform = 'translateY(12px)';
       setTimeout(() => {
         card.style.display = 'none';
-      }, 250);
+      }, 200);
     }
   });
 }
 
-// Copy to Clipboard with Visual Toast Feedback
-function copyToClipboard(text, message) {
+// Copy to Clipboard Utility with Toast Notification
+function copyContact(text, message) {
   if (navigator.clipboard && window.isSecureContext) {
     navigator.clipboard.writeText(text).then(() => {
       showToast(message || 'Copied to clipboard!');
     }).catch(() => {
-      fallbackCopy(text, message);
+      fallbackCopyText(text, message);
     });
   } else {
-    fallbackCopy(text, message);
+    fallbackCopyText(text, message);
   }
 }
 
-function fallbackCopy(text, message) {
+function fallbackCopyText(text, message) {
   const textArea = document.createElement('textarea');
   textArea.value = text;
   textArea.style.position = 'fixed';
@@ -172,51 +61,52 @@ function fallbackCopy(text, message) {
   document.body.removeChild(textArea);
 }
 
-// Toast Notification
+// Toast Display
 function showToast(msg) {
   const toast = document.getElementById('toast');
-  const toastMsg = document.getElementById('toastMsg');
-  if (!toast || !toastMsg) return;
+  const toastText = document.getElementById('toastText');
+  if (!toast || !toastText) return;
 
-  toastMsg.textContent = msg;
+  toastText.textContent = msg;
   toast.classList.add('show');
   setTimeout(() => {
     toast.classList.remove('show');
   }, 3200);
 }
 
-// Mobile Menu Toggle
-function toggleMobileMenu() {
-  const menu = document.getElementById('mobileNavMenu');
-  if (!menu) return;
-  menu.classList.toggle('open');
-}
-
-function closeMobileMenu() {
-  const menu = document.getElementById('mobileNavMenu');
-  if (menu && menu.classList.contains('open')) {
-    menu.classList.remove('open');
+// Mobile Nav Toggle
+function toggleMobileNav() {
+  const panel = document.getElementById('mobileNavPanel');
+  if (panel) {
+    panel.classList.toggle('open');
   }
 }
 
-// Handle Contact Form Submit (Prepares Mailto Action)
-function handleContactSubmit(e) {
-  e.preventDefault();
-  const name = document.getElementById('senderName').value.trim();
-  const email = document.getElementById('senderEmail').value.trim();
-  const subject = document.getElementById('msgSubject').value.trim();
-  const body = document.getElementById('msgBody').value.trim();
+function closeMobileNav() {
+  const panel = document.getElementById('mobileNavPanel');
+  if (panel) {
+    panel.classList.remove('open');
+  }
+}
 
-  if (!name || !email || !subject || !body) {
+// Contact Form Submission Handler (Mailto link generator)
+function handleInquiry(e) {
+  e.preventDefault();
+  const name = document.getElementById('inqName').value.trim();
+  const email = document.getElementById('inqEmail').value.trim();
+  const subject = document.getElementById('inqSubject').value.trim();
+  const message = document.getElementById('inqMessage').value.trim();
+
+  if (!name || !email || !subject || !message) {
     showToast('Please fill out all fields.');
     return;
   }
 
-  const fullBody = `Sender Name: ${name}\nSender Email: ${email}\n\nMessage:\n${body}`;
-  const mailtoUrl = `mailto:mercymoraa012@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(fullBody)}`;
+  const emailBody = `Hi Mercy,\n\nSender: ${name} (${email})\n\nMessage:\n${message}\n\nSent from Portfolio Website.`;
+  const mailtoLink = `mailto:mercymoraa012@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
 
-  window.location.href = mailtoUrl;
-  showToast('Opening default email client...');
+  window.location.href = mailtoLink;
+  showToast('Opening your email client...');
 }
 
 // Active Nav Link Spy on Scroll
@@ -227,7 +117,7 @@ window.addEventListener('scroll', () => {
 
   sections.forEach(section => {
     const sectionTop = section.offsetTop;
-    if (window.pageYOffset >= sectionTop - 140) {
+    if (window.pageYOffset >= sectionTop - 160) {
       currentId = section.getAttribute('id');
     }
   });
@@ -237,5 +127,22 @@ window.addEventListener('scroll', () => {
     if (link.getAttribute('href') === `#${currentId}`) {
       link.classList.add('active');
     }
+  });
+});
+
+// Sticker Micro-Interaction (Mouse Tracking Tilt)
+document.addEventListener('DOMContentLoaded', () => {
+  const sticker = document.querySelector('.hero-sticker-card');
+  if (!sticker) return;
+
+  sticker.addEventListener('mousemove', (e) => {
+    const rect = sticker.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    sticker.style.transform = `perspective(300px) rotateX(${-y * 0.1}deg) rotateY(${x * 0.1}deg) scale(1.05)`;
+  });
+
+  sticker.addEventListener('mouseleave', () => {
+    sticker.style.transform = 'perspective(300px) rotateX(0deg) rotateY(0deg) scale(1)';
   });
 });
